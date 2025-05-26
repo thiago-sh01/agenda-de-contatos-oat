@@ -13,13 +13,39 @@
 
     <main class="container">
       <section class="form-section">
-        <form id="form-contato">
-          <h2>Adicione um Novo Contato</h2>
-          <input type="text" id="nome" placeholder="Nome" required />
-          <input type="text" id="telefone" placeholder="Telefone" required />
-          <input type="email" id="email" placeholder="Email" required />
-          <button type="submit">Salvar</button>
-        </form>
+        <section class="form-section">
+          <form id="form-contato">
+            <h2>Novo Contato</h2>
+            <input type="text" id="nome" placeholder="Nome" required />
+            <input type="text" id="telefone" placeholder="Telefone" required />
+            <input type="email" id="email" placeholder="Email" required />
+            <button type="submit">Salvar</button>
+          </form>
+
+          <!-- Modal de edição -->
+          <div id="modal-editar" class="modal">
+            <form id="form-editar" class="modal-conteudo">
+              <h2>Editar Contato</h2>
+              <input type="text" id="edit-nome" placeholder="Nome" required />
+              <input
+                type="text"
+                id="edit-telefone"
+                placeholder="Telefone"
+                required
+              />
+              <input
+                type="email"
+                id="edit-email"
+                placeholder="Email"
+                required
+              />
+              <div class="botoes-modal">
+                <button type="submit">Atualizar</button>
+                <button type="button" id="cancelar-edicao">Cancelar</button>
+              </div>
+            </form>
+          </div>
+        </section>
       </section>
 
       <section class="lista-section">

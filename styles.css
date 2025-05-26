@@ -98,6 +98,34 @@ footer {
   color: #777;
 }
 
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-conteudo {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.botoes-modal {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
 @media (max-width: 768px) {
   .container {
     flex-direction: column;
