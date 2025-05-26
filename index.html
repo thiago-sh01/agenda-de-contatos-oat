@@ -1,13 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Agenda de Contatos</title>
     <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="script.js" />
-    <title>Document</title>
   </head>
   <body>
-    <h1>hello wordl</h1>
+    <header>
+      <h1>Agenda de Contatos</h1>
+    </header>
+
+    <main class="container">
+      <section class="form-section">
+        <form id="form-contato">
+          <h2>Adicione um Novo Contato</h2>
+          <input type="text" id="nome" placeholder="Nome" required />
+          <input type="text" id="telefone" placeholder="Telefone" required />
+          <input type="email" id="email" placeholder="Email" required />
+          <button type="submit">Salvar</button>
+        </form>
+      </section>
+
+      <section class="lista-section">
+        <h2>Contatos Salvos</h2>
+        <ul id="lista-contatos"></ul>
+      </section>
+    </main>
+
+    <footer>
+      <p>© 2025 Agenda de Contatos</p>
+    </footer>
+
+    <script src="script.js"></script>
   </body>
 </html>
