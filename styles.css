@@ -76,14 +76,20 @@ form button:hover {
   font-size: 0.85rem;
 }
 
-#lista-contatos li button:nth-child(1) {
-  background-color: #ffaa00;
-  color: white;
-}
-
 #lista-contatos li button:nth-child(2) {
   background-color: #cc0000;
   color: white;
+}
+
+.btn-lixeira {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.btn-lixeira:hover {
+  transform: scale(1.1);
 }
 
 footer {
@@ -92,7 +98,6 @@ footer {
   color: #777;
 }
 
-/* Responsividade para telas menores */
 @media (max-width: 768px) {
   .container {
     flex-direction: column;
