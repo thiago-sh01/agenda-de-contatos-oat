@@ -47,12 +47,36 @@ function renderizarContatos() {
     const item = document.createElement("li");
     item.innerHTML = `
       <div>
-        <strong>${contato.nome}</strong> - ${contato.telefone} - ${contato.email}
-        <button onclick="editarContato(${index})">Editar</button>
-      </div>
-      <img src="assets/delete.svg" alt="Excluir" class="btn-lixeira" onclick="deletarContato(${index})" />
+    <strong>${contato.nome}</strong> - ${contato.telefone} - ${contato.email}
+  </div>
+  <div class="btn-acao">
+    <button class="btn-editar-overlay" onclick="editarContato(${index})" aria-label="Editar"></button>
+    <button class="btn-editar" onclick="editarContato(${index})">Editar</button>
+    <img src="assets/delete.svg" alt="Excluir" class="btn-lixeira" onclick="deletarContato(${index})" />
+  </div>
     `;
+    adicionarSwipe(item);
     lista.appendChild(item);
+  });
+}
+
+function adicionarSwipe(item) {
+  let startX = 0;
+  let moved = false;
+
+  item.addEventListener("touchstart", (e) => {
+    startX = e.touches[0].clientX;
+    moved = false;
+  });
+
+  item.addEventListener("touchmove", (e) => {
+    const diffX = e.touches[0].clientX - startX;
+    if (diffX < -30) {
+      item.classList.add("swiped");
+      moved = true;
+    } else if (diffX > 30 && moved) {
+      item.classList.remove("swiped");
+    }
   });
 }
 
