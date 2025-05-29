@@ -76,11 +76,6 @@ form button:hover {
   font-size: 0.85rem;
 }
 
-#lista-contatos li button:nth-child(2) {
-  background-color: #cc0000;
-  color: white;
-}
-
 .btn-lixeira {
   width: 20px;
   height: 20px;
@@ -161,6 +156,12 @@ footer {
   #lista-contatos li {
     flex-direction: column;
     align-items: flex-start;
+    position: relative;
+    overflow: hidden;
+    padding: 15px;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+    touch-action: pan-y;
   }
 
   #lista-contatos li button {
@@ -168,18 +169,20 @@ footer {
     margin-top: 5px;
   }
 
-  #lista-contatos li {
-    position: relative;
-    overflow: hidden;
-    background: #f9f9f9;
-    margin-bottom: 10px;
-    padding: 15px;
-    border-radius: 8px;
-    transition: transform 0.3s ease;
-    touch-action: pan-y;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  .btn-editar {
+    order: 2;
+    margin-top: 10px;
+    align-self: flex-end;
+    width: auto;
+  }
+
+  .btn-lixeira {
+    width: 18px;
+    height: 18px;
+    order: 1;
+    align-self: flex-start;
+    margin-top: 0;
+    margin-bottom: 5px;
   }
 
   .btn-acao {
@@ -196,11 +199,8 @@ footer {
     pointer-events: none;
   }
 
-  .btn-editar {
-    display: none;
-  }
-
   .btn-editar-overlay {
+    display: none;
     position: absolute;
     top: 0;
     right: 0;
@@ -213,29 +213,12 @@ footer {
     z-index: 2;
   }
 
-  .btn-lixeira {
-    width: 24px;
-    height: 24px;
-    cursor: pointer;
-    transition: transform 0.2s ease;
-    position: relative;
-    z-index: 1;
-  }
-
-  .btn-lixeira:hover {
-    transform: scale(1.1);
-  }
-
   li.swiped {
     transform: translateX(-100px);
   }
 
   li.swiped .btn-acao {
     pointer-events: auto;
-  }
-
-  .btn-editar-overlay {
-    display: none;
   }
 
   li.swiped .btn-editar-overlay {
