@@ -144,12 +144,12 @@ footer {
 
   .form-section,
   .lista-section {
-    max-width: 100%;
     width: 100%;
+    max-width: none;
   }
 
-  form button,
-  form input {
+  form input,
+  form button {
     font-size: 1rem;
   }
 
@@ -160,68 +160,37 @@ footer {
     overflow: hidden;
     padding: 15px;
     border-radius: 8px;
-    transition: transform 0.3s ease;
-    touch-action: pan-y;
-  }
-
-  #lista-contatos li button {
-    width: 100%;
-    margin-top: 5px;
-  }
-
-  .btn-editar {
-    order: 2;
-    margin-top: 10px;
-    align-self: flex-end;
-    width: auto;
-  }
-
-  .btn-lixeira {
-    width: 18px;
-    height: 18px;
-    order: 1;
-    align-self: flex-start;
-    margin-top: 0;
-    margin-bottom: 5px;
   }
 
   .btn-acao {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    height: 100%;
     display: flex;
+    flex-direction: row;   /* lado a lado */
+    justify-content: flex-start;
     align-items: center;
-    gap: 5px;
-    padding: 0 10px;
-    background: transparent;
-    pointer-events: none;
+    gap: 10px;
+    margin-top: 10px;
   }
 
-  .btn-editar-overlay {
-    display: none;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    width: 100px;
-    background-color: rgba(0, 0, 0, 0.05);
+  .btn-editar {
+    padding: 8px 14px;
+    background-color: #3498db;
+    color: white;
+    font-size: 0.9rem;
     border: none;
+    border-radius: 6px;
     cursor: pointer;
-    pointer-events: auto;
-    z-index: 2;
   }
 
-  li.swiped {
-    transform: translateX(-100px);
+  .btn-lixeira {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
   }
 
-  li.swiped .btn-acao {
-    pointer-events: auto;
-  }
-
-  li.swiped .btn-editar-overlay {
-    display: block;
+  .btn-lixeira:hover {
+    transform: scale(1.2);
   }
 }
+
+
